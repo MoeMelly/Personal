@@ -1,7 +1,12 @@
 import java.io.Serializable;
 
 public enum ServiceType implements Serializable, Comparable<ServiceType> {
-    OIL_CHANGE("Replace engine oil and filter", 30, 50.00), TIRE_ROTATION("Rotate all four tires", 20, 25.00), AIR_FILTER_REPLACEMENT("Replace engine air intake", 15, 30.00), BRAKE_INSPECTION("Check brake pads, Rotors and fluids", 30, 40.00), BATTERY_CHECK("Test battery health,Check terminal condition", 10, 15.99), COOLANT_FLUSH("Flush and replace engine", 60, 110.99);
+    OIL_CHANGE("Replace engine oil and filter", 30, 50.00),
+    TIRE_ROTATION("Rotate all four tires", 20, 25.00),
+    AIR_FILTER_REPLACEMENT("Replace engine air intake", 15, 30.00),
+    BRAKE_INSPECTION("Check brake pads, Rotors and fluids", 30, 40.00),
+    BATTERY_CHECK("Test battery health,Check terminal condition", 10, 15.99),
+    COOLANT_FLUSH("Flush and replace engine", 60, 110.99);
 
 
     private final String description;
@@ -37,7 +42,11 @@ public enum ServiceType implements Serializable, Comparable<ServiceType> {
 
 
 enum Repairs {
-    BRAKE_REPLACEMENT("Replace brake pads and resurface rotors", 90, 249.99), ENGINE_REPAIR("Diagnose and repair engine issues", 240, 689.73), TRANSMISSION_SERVICE("Drain and replace transmission fluid/filter", 120, 290.99), SUSPENSION_REPAIR("Inspect and replace suspension components", 180, 404.99), EXHAUST_REPAIR("Repair or replace exhaust/muffler", 90, 150.99);
+    BRAKE_REPLACEMENT("Replace brake pads and resurface rotors", 90, 249.99),
+    ENGINE_REPAIR("Diagnose and repair engine issues", 240, 689.73),
+    TRANSMISSION_SERVICE("Drain and replace transmission fluid/filter", 120, 290.99),
+    SUSPENSION_REPAIR("Inspect and replace suspension components", 180, 404.99),
+    EXHAUST_REPAIR("Repair or replace exhaust/muffler", 90, 150.99);
 
 
     private final String description;
