@@ -46,22 +46,28 @@ public enum DivinesExtensions {
                     .append("Price $").append(extensions.getPrice()).append("\n")
                     .append("Description: ").append(extensions.getDescriptions()).append("\n\n");
         }
+        builder.append("--HAIR TYPES--\n");
+        for (hairTypes types : hairTypes.values()) {
+            String formattedName = formatEnum(types.name());
+            builder.append("Choosen extension Types: ").append(formattedName).append("\n");
+            builder.append("Price $").append(types.getPrice()).append("\n\n");
+        }
         return builder.toString();
     }
 
-    public double basePrice(double tax, hairTypes selectedHairType) {
-        double basePrice = 0.0;
+    public double basePrice(DivinesExtensions extensions, double tax, hairTypes selectedHairType) {
         double salesTax = getPrice() + (getPrice() + 5.80);
-        double price = switch ((int) basePrice) {
+        double price = switch (extensions) {
             case CLIP_IN_EXTENSIONS -> 50.00;
             case TAPE_IN_EXTENSIONS -> 180.00;
             case SEW_IN -> 450.00;
             case HALO_EXTENSIONS -> 120.00;
+            default -> 0.0;
 
 
-            default -> throw new IllegalStateException("Unexpected value: " + (int) basePrice);
+
         };
-        return basePrice + selectedHairType.getPrice();
+        return price + selectedHairType.getPrice();
     }
 
     enum hairTypes {
@@ -83,7 +89,6 @@ public enum DivinesExtensions {
         }
 
         public double selectedHairTypes(hairTypes types, double tax) {
-            double basePrice = 0.0;
             double pricing = switch (types) {
                 case REMY -> 50.75;
                 case HUMAN -> 30.65;
@@ -91,19 +96,8 @@ public enum DivinesExtensions {
                 case VIRGIN_REMY -> 84.87;
                 case SYNTHETIC -> 0.0;
             };
-            return basePrice;
+            return pricing;
         }
 
-        @Override
-        public String toString() {
-            StringBuilder sb = new StringBuilder();
-            sb.append("--Extension Types--\n");
-            for (hairTypes types : hairTypes.values()) {
-                String formattedNames = formatEnum(types.name());
-                sb.append("Extension Type: ").append(formattedNames).append("\n")
-                        .append("Prices $").append(types.getPrice()).append("\n\n");
-            }
-            return sb.toString();
-        }
     }
 }
