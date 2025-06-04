@@ -6,9 +6,10 @@ public class InstallServices {
     boolean wigRevamp;
     boolean extraHair;
     boolean bringOwnPrep;
+    boolean installationFee = false;
 
 
-    public InstallServices(DivinesExtensions extensions, boolean customize, boolean wigRevamp, boolean extraHair, boolean bringOwnPrep, DivinesLashes lashes, DivinesWigs wigs) {
+    public InstallServices(DivinesExtensions extensions, boolean customize, boolean wigRevamp, boolean extraHair, boolean bringOwnPrep, boolean installationFee, DivinesLashes lashes, DivinesWigs wigs) {
         this.extensions = extensions;
         this.customize = customize;
         this.wigRevamp = wigRevamp;
@@ -16,7 +17,12 @@ public class InstallServices {
         this.bringOwnPrep = bringOwnPrep;
         this.lashes = lashes;
         this.wigs = wigs;
+        this.installationFee = installationFee;
 
+    }
+
+    public boolean isInstallationFee() {
+        return installationFee;
     }
 
     public boolean isWigRevamp() {
@@ -99,7 +105,34 @@ public class InstallServices {
         }
         return totalCost;
     }
-}
+
+    public double lashInstalls(DivinesLashes lashes) {
+        int deposit = 120;
+        double basePrice = 90;
+        double totalPrice = 0.0;
+        double installFee = 110.00;
+
+        switch (lashes) {
+            case LASH_BUNDLES:
+            case MINK_LASHES:
+            case FAUX_MINK_LASHES:
+            case NATURAL_DAILY_LASHES:
+                totalPrice += getLashes().getPrice() + deposit;
+                break;
+            default:
+                throw new IllegalArgumentException("Invalid lash type: ");
+        }
+
+                if (installationFee) {}totalPrice += installFee;
+
+
+        return totalPrice;
+    }
+
+
+    }
+
+
 
 
 
