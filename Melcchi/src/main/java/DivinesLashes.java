@@ -22,6 +22,7 @@ public enum DivinesLashes {
             word.append(Character.toUpperCase(word.charAt(0))).append(word.substring(1).toLowerCase()).append(" ");
 
 
+
         }
 
         return word.toString().trim();
