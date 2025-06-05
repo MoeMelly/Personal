@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class AssigningRoles {
     List<LashTechs> techs = new ArrayList<>();
@@ -12,5 +10,13 @@ public class AssigningRoles {
     public List<LashTechs> getTechs() {
         return techs;
     }
-    public List<LashTechs> techAssign(int experienceRequired, )
+    public List<LashTechs> techAssign(int experienceRequired) {
+       List<LashTechs> qualified = new ArrayList<>();
+       for (LashTechs techs1 : LashTechs.values()) {
+           if (techs1.getExperienceRequired() >= experienceRequired) {
+               qualified.add(techs1);
+           }
+       }
+        return qualified;
+    }
 }
