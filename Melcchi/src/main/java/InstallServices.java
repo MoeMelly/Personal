@@ -45,7 +45,7 @@ public class InstallServices {
         return wigs;
     }
 
-    public double wigHairInstalls(DivinesWigs wigs, double price) {
+    public double wigInstalls(DivinesWigs wigs) {
         int deposit = 150;
         double basicWigInstall = 50.00;
         double WigRevamp = 80.00;
@@ -58,12 +58,11 @@ public class InstallServices {
             case LACE_FRONT_WIG:
             case V_PART_WIG:
             case GLUELESS_WIG:
-                totalCost = basicWigInstall + getWigs().getPrice() + deposit;
+                totalCost += basicWigInstall + getWigs().getPrice() + deposit;
                 break;
             default:
                 throw new RuntimeException();
         }
-
 
         if (customize) {
             totalCost += customization;

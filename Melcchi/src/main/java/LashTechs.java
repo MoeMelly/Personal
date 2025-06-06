@@ -1,9 +1,9 @@
 public enum LashTechs {
-    JUNIOR_LASH_TECH("Aaliyah","Level I", 6, 85),
-    CERTIFIED_LASH_TECH("Jayla","Level II", 1, 140),
-    SENIOR_LASH_TECH("Amariyah","Level III", 2, 180),
-    MASTER_LASH_TECH("Rebecca","Level IV", 5, 250),
-    EDUCATOR("Veronicaa","Masters/Trainer", 9, 350);
+    JUNIOR_EXTENSION_TECH("Aaliyah","Level I", 6, 85),
+    CERTIFIED_WIGS_TECH("Jayla","Level II", 1, 140),
+    SENIOR_LASH_TECH("Mariah","Level III", 2, 180),
+    MASTER_TECH("Rebecca","Level IV", 5, 250),
+    EDUCATOR("Veronica","Masters/Trainer", 9, 350);
 
     private final String name;
     private final String level;
