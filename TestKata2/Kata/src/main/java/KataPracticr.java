@@ -1,6 +1,9 @@
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class KataPracticr {
+    private static final Logger logger = Logger.getLogger(String.valueOf(KataPracticr.class));
     public static void main(String[] args) {
 
     }
@@ -84,7 +87,44 @@ public class KataPracticr {
         return (List<String>) x.stream().filter(name -> name.length() == 4).toList();
 
     }
+    public static String solution(String str) {
+        StringBuilder reversed = new StringBuilder();
 
+        for (int i = str.length() - 1; i >= 0 ; i--) {
+            reversed.append(str.charAt(i));
+
+
+        }
+
+        return reversed.toString() ;
+    }
+    public static int summation(int n) {
+        return n * (n + 1) / 2;
+    }
+    public static String updateLight(String current) {
+       if (current.equalsIgnoreCase("green"))
+           return "red";
+       else if (current.equalsIgnoreCase("yellow")) {
+           return "green";
+       } else if (current.equalsIgnoreCase("red")) {
+           return "yellow";
+
+       } else {
+           logger.log(Level.SEVERE, "Error With Lights");
+
+       }
+
+        return current;
+    }
+    public static int squareSum(int[] n)
+    {
+        int sum = 0;
+        for (int j : n) {
+            sum += (int) Math.sqrt(j);
+
+        }
+        return sum;
+    }
 }
 
 
